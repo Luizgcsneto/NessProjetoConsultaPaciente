@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace ProjetoConsultaPaciente.Dominio.Entidade
 {
-   public class ItemPedido
+   public class ItemPedido : Entidade
     {
-        public int id { get; set; }
-        public int produtoID { get; set; }
-        public int quantidade { get; set; }
+        private int id { get; set; }
+        private int produtoID { get; set; }
+        private int quantidade { get; set; }
+
+        public override void Validate()
+        {
+            LimparMensagemValidacao();
+        }
     }
 }

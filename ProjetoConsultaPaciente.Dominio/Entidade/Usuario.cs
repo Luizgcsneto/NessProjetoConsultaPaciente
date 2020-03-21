@@ -4,15 +4,20 @@ using System.Text;
 
 namespace ProjetoConsultaPaciente.Dominio.Entidade
 {
-    public class Usuario
+    public class Usuario : Entidade
     {
-        public int id { get; set; }
-        public String email { get; set; }
-
-        public String senha { get; set; }
-        public String nome { get; set; }
-        public String sobreNome { get; set; }
+        private int id { get; set; }
+        private String email { get; set; }
+        private String senha { get; set; }
+        private String nome { get; set; }
+        private String sobreNome { get; set; }
 
         public ICollection<Pedido> Pedidos { get; set; }
+
+        public override void Validate()
+        {
+            LimparMensagemValidacao();
+
+        }
     }
 }

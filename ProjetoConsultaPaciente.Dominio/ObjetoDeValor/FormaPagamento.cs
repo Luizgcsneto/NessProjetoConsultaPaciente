@@ -7,11 +7,11 @@ namespace ProjetoConsultaPaciente.Dominio.ObjetoDeValor
 {
    public class FormaPagamento
     {
-        public int id { get; set; }
+        private int id { get; set; }
 
-        public String nome { get; set; }
+        private String nome { get; set; }
 
-        public String descricao { get; set; }
+        private String descricao { get; set; }
 
         public bool ehBoleto
         {

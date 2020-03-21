@@ -4,15 +4,19 @@ using System.Text;
 
 namespace ProjetoConsultaPaciente.Dominio.Entidade
 {
-    public class Produto
+    public class Produto : Entidade
     {
-        public int id { get; set; }
+        private int id { get; set; }
 
-        public String nome { get; set; }
+        private String nome { get; set; }
 
-        public String descricao { get; set; }
+        private String descricao { get; set; }
 
-        public Decimal preco { get; set; }     
+        private Decimal preco { get; set; }
 
+        public override void Validate()
+        {
+            LimparMensagemValidacao();
+        }
     }
 }
