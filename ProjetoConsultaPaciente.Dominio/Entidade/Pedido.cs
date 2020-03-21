@@ -30,11 +30,14 @@ namespace ProjetoConsultaPaciente.Dominio.Entidade
                 AdicionarCritica("Erro - Pedido não pode sem item de pedido!");
             }
                
-             
-
             if (string.IsNullOrEmpty(CEP))
             {
                 AdicionarCritica("Crítica - CEP não pode ser vazio");
+            }
+
+            if(formaPagamentoID == 0)
+            {
+                AdicionarCritica("Crítica não foi informado a forma de pagamento");
             }
 
         }

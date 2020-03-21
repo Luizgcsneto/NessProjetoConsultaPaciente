@@ -18,6 +18,25 @@ namespace ProjetoConsultaPaciente.Dominio.Entidade
         {
             LimparMensagemValidacao();
 
+            if (string.IsNullOrEmpty(nome))
+            {
+                AdicionarCritica("Por favor informar o Nome do usuário");
+            }
+
+            if (string.IsNullOrEmpty(sobreNome))
+            {
+                AdicionarCritica("Por favor informar o Sobrenome do usuário");
+            }
+
+            if (string.IsNullOrEmpty(email))
+            {
+                AdicionarCritica("Por favor informar o e-mail.");
+            }
+
+            if (string.IsNullOrEmpty(senha))
+            {
+                AdicionarCritica("Por favor informar a senha do usuário");
+            }
         }
     }
 }

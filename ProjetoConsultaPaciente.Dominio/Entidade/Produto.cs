@@ -17,6 +17,21 @@ namespace ProjetoConsultaPaciente.Dominio.Entidade
         public override void Validate()
         {
             LimparMensagemValidacao();
+
+            if (string.IsNullOrEmpty(nome))
+            {
+                AdicionarCritica("Informar o nome do produto");
+            }
+
+            if (string.IsNullOrEmpty(descricao))
+            {
+                AdicionarCritica("Informar a descrição do produto");
+            }
+
+            if (preco == 0)
+            {
+                AdicionarCritica("Informar o preço do produto");
+            }
         }
     }
 }

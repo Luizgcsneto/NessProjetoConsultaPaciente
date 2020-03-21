@@ -14,6 +14,16 @@ namespace ProjetoConsultaPaciente.Dominio.Entidade
         public override void Validate()
         {
             LimparMensagemValidacao();
+
+            if(produtoID == 0)
+            {
+                AdicionarCritica("Não foi informado a referência do produto");
+            }
+
+            if(quantidade == 0)
+            {
+                AdicionarCritica("Não foi informado a quantidade");
+            }
         }
     }
 }
