@@ -23,18 +23,16 @@ namespace ProjetoConsultaPaciente.Repositorio.Repositorios
            
         }
 
-       
+        /* public TEntity ObterPorID(int id)
+         {
 
-        public TEntity ObterPorID(int id)
-        {
-            
-        }
+         }
 
-        public IEnumerable<TEntity> ObterTodos()
-        {
-            
-        }
+         public IEnumerable<TEntity> ObterTodos()
+         {
 
+         }
+         */
         public void Remover(TEntity entity)
         {
             
@@ -43,6 +41,16 @@ namespace ProjetoConsultaPaciente.Repositorio.Repositorios
         public void Dispose()
         {
 
+        }
+
+        public TEntity ObterPorID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<TEntity> ObterTodos()
+        {
+            throw new NotImplementedException();
         }
     }
 }
