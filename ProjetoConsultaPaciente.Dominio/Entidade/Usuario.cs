@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace ProjetoConsultaPaciente.Dominio.Entidade
 {
     public class Usuario : Entidade
