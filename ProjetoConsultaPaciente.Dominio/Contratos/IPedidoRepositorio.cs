@@ -7,5 +7,6 @@ namespace ProjetoConsultaPaciente.Dominio.Contratos
 {
     public interface IPedidoRepositorio : IBaseRepositorio<Pedido>
     {
+
     }
 }

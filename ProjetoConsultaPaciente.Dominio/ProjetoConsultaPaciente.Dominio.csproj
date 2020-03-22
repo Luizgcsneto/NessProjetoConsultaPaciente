@@ -4,4 +4,21 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Enumerados\**" />
+    <Compile Remove="ObjetoDeValor\**" />
+    <EmbeddedResource Remove="Enumerados\**" />
+    <EmbeddedResource Remove="ObjetoDeValor\**" />
+    <None Remove="Enumerados\**" />
+    <None Remove="ObjetoDeValor\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Contratos\IPedidoRepositorio.cs" />
+    <Compile Remove="Contratos\IProdutoRepositorio.cs" />
+    <Compile Remove="Entidade\ItemPedido.cs" />
+    <Compile Remove="Entidade\Pedido.cs" />
+    <Compile Remove="Entidade\Produto.cs" />
+  </ItemGroup>
+
 </Project>

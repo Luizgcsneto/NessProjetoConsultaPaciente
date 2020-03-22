@@ -1,5 +1,4 @@
-﻿//using ProjetoConsultaPaciente.Dominio.Contratos;
-using ProjetoConsultaPaciente.Dominio.Contratos;
+﻿using ProjetoConsultaPaciente.Dominio.Contratos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,16 +22,6 @@ namespace ProjetoConsultaPaciente.Repositorio.Repositorios
            
         }
 
-        /* public TEntity ObterPorID(int id)
-         {
-
-         }
-
-         public IEnumerable<TEntity> ObterTodos()
-         {
-
-         }
-         */
         public void Remover(TEntity entity)
         {
             

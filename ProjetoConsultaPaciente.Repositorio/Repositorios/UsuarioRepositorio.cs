@@ -2,6 +2,7 @@
 using ProjetoConsultaPaciente.Dominio.Entidade;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Text;
 
 namespace ProjetoConsultaPaciente.Repositorio.Repositorios
@@ -12,5 +13,9 @@ namespace ProjetoConsultaPaciente.Repositorio.Repositorios
         {
 
         }
+
+   
+
+
     }
 }

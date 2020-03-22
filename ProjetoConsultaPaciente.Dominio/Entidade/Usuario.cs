@@ -13,7 +13,7 @@ namespace ProjetoConsultaPaciente.Dominio.Entidade
         private String nome { get; set; }
         private String sobreNome { get; set; }
 
-        public ICollection<Pedido> Pedidos { get; set; }
+       
 
         public override void Validate()
         {
