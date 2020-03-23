@@ -69,12 +69,11 @@ export class HospitalComponent implements OnInit {
 
 
   ngOnInit(): void {  
-
-    function marcacaoHospitais(id:number) {
-      this.router.navigate(['/app-marcacao']);
-    }
-    
+   
   }
- 
+
+  realizarAgendamento(): void {
+    this.router.navigate(['/app-marcacao'], { queryParams: { id: 1 } });
+  }
 
 }

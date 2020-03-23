@@ -3,7 +3,7 @@
 
   <meta charset="utf-8" />
 </head>
-<h2>Agende agora mesmo sua consulta</h2>
+<h2>Página do Paciente</h2>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -19,10 +19,10 @@
       <td>{{marcacao.dataMarcacao}}</td>
       <td>{{marcacao.horario}}</td>
       <td>
-        <button class="btn btn-primary btn-block mb-2" type="submit" (click)="realizarMarcacao(marcacao)">
+        <button class="btn btn-danger btn-block mb-2" type="submit" (click)="desmarcarMarcacao()">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativarSpinner"></span>
           <span class="sr-only">Loading...</span>
-          Agendar
+          Desagendar
         </button>
       </td>
     </tr>

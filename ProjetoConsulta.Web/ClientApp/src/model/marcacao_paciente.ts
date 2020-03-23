@@ -1,7 +1,7 @@
 import { Data } from "@angular/router";
 import { Timestamp } from "rxjs";
 
-export class Marcacao {
+export class MarcacaoPaciente {
 
   id: string;
   dataMarcacao: Data;
