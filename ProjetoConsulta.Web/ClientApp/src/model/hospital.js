@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Hospital = /** @class */ (function () {
-    function Hospital(_id, _nomeHospital, _ehAdministrador, _endereco, _email, _contato) {
+    function Hospital(_id, _nomeHospital, _endereco, _email, _contato) {
         this.id = _id;
         this.nomeHospital = _nomeHospital;
-        this.ehAdministrador = _ehAdministrador;
         this.endereco = _endereco;
         this.email = _email;
         this.contato = _contato;

@@ -11,38 +11,58 @@ import { Hospital } from '../../model/hospital';
 })
 export class HospitalComponent implements OnInit {
 
-  Hospital hospital1 = new Hospital("0e257627-596d-4fc5-b922-921858be628e",
+  Hospital hospital1 = new Hospital(1,
                                     "Getulio Vargas",
-                                         false,
-                                    "rua hospital 1",
-                                    "hospital1@hotamil.com",
-                                    "contato hospital 1");
+                                    "Av. General San Martin, S/N, Cordeiro, Recife - PE",
+                                    "hgvsec@saude.pe.gov.br",
+                                    "Diretor: Bartolomeu Nascimento");
 
-  Hospital hospital2 = new Hospital("0e257655-596d-4fc5-b922-921858be628e",
+  Hospital hospital2 = new Hospital(2,
                                       "Hospital da Restauração",
-                                      false,
-                                      "endereco hospital 2",
-                                          "hospital2@gmail.com",
-                                          "contato hospital 2");
-  
+                                      "Av. Gov. Agamenon Magalhães, s/n - Derby, Recife - PE, 52171-011",
+                                      "direcaohr@gmail.com",
+                                      "Diretor Miguel Arcanjo");
+ 
+  Hospital hospital3 = new Hospital(3,
+                                    "Hospital Agamenon Magalhães",
+                                    "Estrada do Arraial, 2.723, Casa Amarela, Recife - PE",
+                                    "diger.ham@saude.pe.gov.br",
+                                    "Diretor: Cláudia Miranda");
 
-  Hospital hospital3 = new Hospital("0e2576288-596d-4fc5-b922-921858be628e",
-                                              "UPA da Pe-15",
-                                                    false,
-                                          "endereco hospital 3",
-                                              "hospital3@gmail.com",
-                                            "contato hospital 3");
+  Hospital hospital4 = new Hospital(4,
+                                    "Hospital Barão de Lucena",
+                                    "Avenida Caxangá, 3.860, Iputinga, Recife - PE",
+                                    "",
+                                    "Diretor: Ângela Santos");
 
-  Hospital hospital4 = new Hospital("0e2579999-596d-4fc5-b922-921858be628e",
-                                              "Hospital das clínicas",
-    false,
-    "endereco hospital 4",
-    "hospital4@gmail.com",
-  "contato hospital 4");
+  Hospital hospital5 = new Hospital(5,
+                                      "Hospital Geral de Areias",
+                                      "Avenida Recife, 810 - Estância, Recife - PE",
+                                      "hga@saude.pe.gov.br",
+                                      "Diretor:Frinéa Vaz");
+
+  Hospital hospital6 = new Hospital(6,
+                                      "Hospital Jaboatão Prazeres",
+                                      "Rua Recife, S/N, Cajueiro Seco, Jaboatão dos Guararapes - PE",
+                                      "seshpjp@yahoo.com.br",
+                                      "Diretor: Alfredo Pereira");
+
+
+  Hospital hospital7 = new Hospital(7,
+                                      "Hospital Otávio de Freitas",
+                                      "Rua Aprígio Guimarães, S/N - Tejipió, Recife - PE",
+                                      "diretoriahof@gmail.com",
+                                       "Diretor: Antônio Almeida");
+
+  Hospital hospital8 = new Hospital(8,
+                                      "Hospital São Lucas",
+                                       "Bosque Flamboyant, BR-363, S/N, Floresta Nova, Fernando de Noronha - PE",
+                                      "hslucas@noronha.pe.gov.br",
+                                      "Diretor: Natália Câmpelo");
 
 
 
-  hospitais: Hospital[] = [this.hospital1, this.hospital2, this.hospital3, this.hospital4];
+  hospitais: Hospital[] = [this.hospital1, this.hospital2, this.hospital3, this.hospital4, this.hospital5, this.hospital6, this.hospital7, this.hospital8];
   
 
   constructor(private router: Router, private activatedRouter: ActivatedRoute) { }
@@ -50,10 +70,10 @@ export class HospitalComponent implements OnInit {
 
   ngOnInit(): void {  
 
-   /* function marcacaoHospitais(id:number) {
-      this.router.navigate(['/app-marcacoes']);
+    function marcacaoHospitais(id:number) {
+      this.router.navigate(['/app-marcacao']);
     }
-    */
+    
   }
  
 
