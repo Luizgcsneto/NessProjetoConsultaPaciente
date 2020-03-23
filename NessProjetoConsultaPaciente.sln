@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoConsultaPaciente.Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoConsultaPaciente.Repositorio", "ProjetoConsultaPaciente.Repositorio\ProjetoConsultaPaciente.Repositorio.csproj", "{CD270DD4-9B25-409A-BAF3-BCB9D31EBC76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoConsulta.Web", "ProjetoConsulta.Web\ProjetoConsulta.Web.csproj", "{6FD0D971-9C50-446E-B0C8-822EB7B775B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoConsulta.Web", "ProjetoConsulta.Web\ProjetoConsulta.Web.csproj", "{6FD0D971-9C50-446E-B0C8-822EB7B775B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -15,6 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +29,7 @@
     <None Remove="ClientApp\src\app\hospital\hospital.component.ts" />
     <None Remove="ClientApp\src\app\marcacaopaciente\marcacao.paciente.component.ts" />
     <None Remove="ClientApp\src\app\marcacao\marcacao.component.ts" />
+    <None Remove="ClientApp\src\app\servicos\paciente\paciente.servico.ts" />
     <None Remove="ClientApp\src\model\hospital.ts" />
     <None Remove="ClientApp\src\model\marcacao.ts" />
     <None Remove="ClientApp\src\model\marcacao_paciente.ts" />
@@ -42,6 +44,7 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\hospital\hospital.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\servicos\paciente\paciente.servico.ts" />
     <TypeScriptCompile Include="ClientApp\src\model\hospital.ts" />
     <TypeScriptCompile Include="ClientApp\src\model\marcacao_paciente.ts">
       <SubType>Code</SubType>
@@ -51,7 +54,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\servicos\hospital\" />
+    <Folder Include="ClientApp\src\app\servicos\marcacao\" />
     <Folder Include="ClientApp\src\assets\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoConsultaPaciente.Dominio\ProjetoConsultaPaciente.Dominio.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -8,7 +8,7 @@ namespace ProjetoConsultaPaciente.Repositorio.Contexto
 {
     public class ProjetoConsultaContexto : DbContext
     {
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Paciente> pacientes { get; set; }
        
 
     }

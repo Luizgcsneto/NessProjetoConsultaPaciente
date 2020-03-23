@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Paciente } from '../../model/paciente';
+import { PacienteServico } from '../servicos/paciente/paciente.servico';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
   public mensagemErro;
   public ativarSpinner = false;
 
-  constructor(private router: Router, private activatedRouter: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRouter: ActivatedRoute, private pacienteServico: PacienteServico) { }
 
 
   ngOnInit(): void {
@@ -33,39 +34,30 @@ export class LoginComponent implements OnInit {
   }
   entrar(): void {
     this.ativarSpinner = true;
-    //this.usuarioServico.verificarUsuario(this.usuario)
-    //  .subscribe(
-    //    data => {
-    //      this.ativarSpinner = false;
-    //      this.usuarioServico.usuario = data;
-    //      this.usuario = data;
-    //      console.log("Realizou login:" + JSON.stringify(data));
+    this.pacienteServico.verificarPaciente(this.usuario)
+      .subscribe(
+        data => {
+          this.ativarSpinner = false;
 
-    //      if (this.returnUrl != null) {
-    //        console.log("returnUrl:" + this.getReturnUrl());
-    //        this.router.navigate([this.getReturnUrl()]);
-    //      }
-    //      else {
-    //        this.router.navigate(["/pesquisar-produto"]);
-    //      }
-    //    },
-    //    err => {
-    //      this.ativarSpinner = false;
-    //      this.mensagemErro = err.error;
-    //      console.error(err.error);
-    //    }
-    //  );
+          this.usuario = data;
+          console.log("Realizou login:" + JSON.stringify(data));
 
-    //if (this.usuario.email == "saulobatistapereira@gmail.com" &&
-    //  this.usuario.senha == "12345") {
-    //  this.usuarioAutenticado = true;
-    //  sessionStorage.setItem("usuario-autenticado", "1");
-    //  this.router.navigate([this.returnUrl]);
+          if (this.returnUrl != null) {
+            console.log("returnUrl:" + this.getReturnUrl());
+            this.router.navigate([this.getReturnUrl()]);
+          }
+          else {
+            this.router.navigate(["/pesquisar-produto"]);
+          }
+        },
+        err => {
+          this.ativarSpinner = false;
+          this.mensagemErro = err.error;
+          console.error(err.error);
+        }
+      );
 
-    //} else {
-    //  this.usuarioAutenticado = false;
-    //}
-    //alert("Email:" + this.usuario.email + " Senha:" + this.usuario.senha);
+
     this.router.navigate(['/questions']);
   }
 

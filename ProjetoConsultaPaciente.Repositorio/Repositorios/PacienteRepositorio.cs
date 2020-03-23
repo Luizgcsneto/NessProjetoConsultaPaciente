@@ -7,9 +7,9 @@ using System.Text;
 
 namespace ProjetoConsultaPaciente.Repositorio.Repositorios
 {
-    class UsuarioRepositorio : BaseRepositorio<Usuario>, IUsuarioRepositorio
+    class PacienteRepositorio : BaseRepositorio<Paciente>, IPacienteRepositorio
     {
-        public UsuarioRepositorio()
+        public PacienteRepositorio()
         {
 
         }

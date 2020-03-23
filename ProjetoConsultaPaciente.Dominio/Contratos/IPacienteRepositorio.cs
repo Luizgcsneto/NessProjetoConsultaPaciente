@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjetoConsultaPaciente.Dominio.Contratos
 {
-    public interface IUsuarioRepositorio : IBaseRepositorio<Usuario>
+    public interface IPacienteRepositorio : IBaseRepositorio<Paciente>
     {
 
     }

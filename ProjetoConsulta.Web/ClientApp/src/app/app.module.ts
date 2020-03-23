@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { MarcacaoComponent } from './marcacao/marcacao.component';
 import { MarcacaoPacienteComponent } from './marcacaopaciente/marcacao.paciente.component';
+import { PacienteServico } from './servicos/paciente/paciente.servico';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { MarcacaoPacienteComponent } from './marcacaopaciente/marcacao.paciente.
       { path: 'app-marcacaopaciente', component: MarcacaoPacienteComponent },
     ])
   ],
-  providers: [],
+  providers: [PacienteServico],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
