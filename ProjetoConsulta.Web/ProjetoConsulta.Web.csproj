@@ -29,6 +29,7 @@
     <None Remove="ClientApp\src\app\hospital\hospital.component.ts" />
     <None Remove="ClientApp\src\app\marcacaopaciente\marcacao.paciente.component.ts" />
     <None Remove="ClientApp\src\app\marcacao\marcacao.component.ts" />
+    <None Remove="ClientApp\src\app\servicos\paciente\hospital.servico.ts" />
     <None Remove="ClientApp\src\app\servicos\paciente\paciente.servico.ts" />
     <None Remove="ClientApp\src\model\hospital.ts" />
     <None Remove="ClientApp\src\model\marcacao.ts" />
@@ -44,6 +45,7 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\hospital\hospital.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\servicos\paciente\hospital.servico.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\servicos\paciente\paciente.servico.ts" />
     <TypeScriptCompile Include="ClientApp\src\model\hospital.ts" />
     <TypeScriptCompile Include="ClientApp\src\model\marcacao_paciente.ts">
@@ -61,6 +63,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjetoConsultaPaciente.Dominio\ProjetoConsultaPaciente.Dominio.csproj" />
+    <ProjectReference Include="..\ProjetoConsultaPaciente.Repositorio\ProjetoConsultaPaciente.Repositorio.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

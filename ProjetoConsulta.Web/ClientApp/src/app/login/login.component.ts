@@ -13,7 +13,7 @@ import { PacienteServico } from '../servicos/paciente/paciente.servico';
 export class LoginComponent implements OnInit {
 
   public email = "luizgonzaga15@gmail.com";
-  public senha = "12345";
+  public password = "12345";
   public enderecoImagem = "https://about-which.s3.amazonaws.com/about-us/media/images/955x637_ct/338_best_buy_458303_00136cc4507103353e2910674352bef4.jpg";
   public titulo = "Imagem padrão do site";
   public enderecoImagemBaixada = "../../../assets/buylogo.jpg";
@@ -40,15 +40,23 @@ export class LoginComponent implements OnInit {
           this.ativarSpinner = false;
 
           this.usuario = data;
-          console.log("Realizou login:" + JSON.stringify(data));
+          if (this.usuario != null) {
+            pacienteServico.pacienteLogado = data;
 
-          if (this.returnUrl != null) {
-            console.log("returnUrl:" + this.getReturnUrl());
-            this.router.navigate([this.getReturnUrl()]);
+            console.log("Realizou login:" + JSON.stringify(data));
+
+            if (this.returnUrl != null) {
+              console.log("returnUrl:" + this.getReturnUrl());
+              this.router.navigate([this.getReturnUrl()]);
+            }
+            else {
+              this.router.navigate(["/app-hospital"]);
+            }
+
           }
-          else {
-            this.router.navigate(["/pesquisar-produto"]);
-          }
+          else
+            this.mensagemErro = "Email e/ou senha inválido(s)";
+
         },
         err => {
           this.ativarSpinner = false;

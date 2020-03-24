@@ -5,9 +5,7 @@ using System.Text;
 
 namespace ProjetoConsultaPaciente.Dominio.Contratos
 {
-    public interface IPacienteRepositorio : IBaseRepositorio<Paciente>
+    public interface IHospitalRepositorio : IBaseRepositorio<Hospital>
     {
-        Paciente VerificarPaciente(Paciente paciente);
-
     }
 }

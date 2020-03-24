@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MarcacaoPaciente } from '../../model/marcacao_paciente';
+import { PacienteServico } from '../servicos/paciente/paciente.servico';
+import { Paciente } from '../../model/paciente';
 
 @Component({
   selector: 'app-marcacaopaciente',
@@ -11,26 +13,33 @@ import { MarcacaoPaciente } from '../../model/marcacao_paciente';
 })
 export class MarcacaoPacienteComponent implements OnInit {
 
-  MarcacaoPaciente marcacao1 = new MarcacaoPaciente("3bd65c4f-fae8-4a81-971c-c8a2eab4fae4", new Date(), true, new Date().getTime(), null, "3bd65c4f-fae8-4a81-971c-c8a2eab4fae4");
-  MarcacaoPaciente marcacao2 = new MarcacaoPaciente("3bd65c4f-fae8-4a81-971c-c8a2eab4fae4", new Date(), true, new Date().getTime(), null, "3bd65c4f-fae8-4a81-971c-c8a2eab4fae4");
-  MarcacaoPaciente marcacao3 = new MarcacaoPaciente("3bd65c4f-fae8-4a81-971c-c8a2eab4fae4", new Date(), true, new Date().getTime(), null, "3bd65c4f-fae8-4a81-971c-c8a2eab4fae4");
 
-  /*
-  Marcacao marcacao2 = new Marcacao();
-  
-  Marcacao marcacao3 = new Marcacao();
-
-  Marcacao marcacao4 = new Marcacao();
-  */
-  marcacoes: MarcacaoPaciente[] = [this.marcacao1, this.marcacao2, this.marcacao3];
-
-
-  constructor(private router: Router, private activatedRouter: ActivatedRoute) { }
+  marcacoes: MarcacaoPaciente[];
+  paciente: Paciente;
+  inclusao: boolean = false;
+  constructor(private router: Router, private activatedRouter: ActivatedRoute, private pacienteServico: PacienteServico) { }
 
 
   ngOnInit(): void {
 
+    this.activatedRouter.queryParams.subscribe(parametros => {
+      if (parametros['inclusao'] == "true") {
+        this.inclusao = true;
+      }
 
+      this.pacienteServico.buscarPaciente(this.pacienteServico.pacienteLogado.id)
+        .subscribe(
+          data => {
+            this.paciente = data;
+            this.marcacoes = this.paciente.marcacoes;
+          },
+          err => {
+
+            console.error(err.error);
+          }
+        );
+
+    });
 
   }
   desmarcarMarcacao(marcacao: MarcacaoPaciente): void {

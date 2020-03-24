@@ -6,4 +6,4 @@ var Paciente = /** @class */ (function () {
     return Paciente;
 }());
 exports.Paciente = Paciente;
-//# sourceMappingURL=paciente.js.map
+//# sourceMappingURL=Paciente.js.map

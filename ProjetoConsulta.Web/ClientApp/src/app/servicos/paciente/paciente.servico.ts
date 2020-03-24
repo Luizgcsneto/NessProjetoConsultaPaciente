@@ -13,6 +13,7 @@ export class PacienteServico implements OnInit {
 
   private baseURL: string;
   private _paciente: Paciente;
+  public pacienteLogado: Paciente;
 
   get Paciente(): Paciente {
     let paciente_json = sessionStorage.getItem("paciente-autenticado");
@@ -38,9 +39,17 @@ export class PacienteServico implements OnInit {
     return this.http.post<Paciente>(this.baseURL + "api/paciente/verificarPaciente", JSON.stringify(paciente), { headers });
   }
 
+  public buscarPaciente(id: string): Observable<Paciente> {
+
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    return this.http.get<Paciente>(this.baseURL + "api/paciente/BuscarPaciente" + id, { headers });
+  }
+
+
+
   public pacienteAutenticado(): boolean {
 
-    return this._paciente != null && (this._paciente.email != "" && this._paciente.senha != "");
+    return this._paciente != null && (this._paciente.email != "" && this._paciente.password != "");
   }
 
   public paciente_Administrador(): boolean {
@@ -57,7 +66,7 @@ export class PacienteServico implements OnInit {
 
     var body = {
       email: paciente.email,
-      senha: paciente.senha,
+      senha: paciente.password,
       nome: paciente.nome,
       sobreNome: paciente.sobreNome
     }

@@ -1,9 +1,12 @@
+import { Marcacao } from "./marcacao";
+
 export class Paciente {
 
-  id: number;
+  id: string;
   email: string;
-  senha: string;
+  password: string;
   nome: string;
   sobreNome: string;
   ehAdministrador: boolean;
+  marcacoes: Marcacao[];
 }

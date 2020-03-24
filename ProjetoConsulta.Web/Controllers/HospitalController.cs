@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ProjetoConsultaPaciente.Dominio.Contratos;
 using ProjetoConsultaPaciente.Dominio.Entidade;
+using ProjetoConsultaPaciente.Repositorio.Repositorios;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,6 +14,15 @@ namespace ProjetoConsulta.Web.Controllers
     [Route("api/[controller]")]
     public class HospitalController : Controller
     {
+
+        private HospitalRepositorio hospitalRepositorio;
+
+        public HospitalController()
+        {
+            hospitalRepositorio = new HospitalRepositorio();
+        }
+
+
         // GET: api/<controller>
         [HttpGet("ListarHospitais")]
         public ActionResult ListarHospitais()
@@ -19,16 +30,7 @@ namespace ProjetoConsulta.Web.Controllers
             try
             {
 
-                var listaHospitais = new List<Hospital>();
-
-                listaHospitais.Add(new Hospital()
-                {
-                    Id = Guid.NewGuid(),
-                    Contato = "813291124",
-                    Email = "hospital@gmail.com",
-                    Endereco = "Avenida Mascarenhas",
-                    Nome = "HR"
-                });
+                var listaHospitais = hospitalRepositorio.Listar();
 
 
                 return Ok(listaHospitais);
@@ -41,37 +43,16 @@ namespace ProjetoConsulta.Web.Controllers
         }
 
         [HttpGet("ListarMarcacoesHospital{id}")]
-        public ActionResult ListarMarcacoesHospital(Guid Id)
+        public ActionResult ListarMarcacoesHospital(string id)
         {
             try
             {
-                var marcacoes = new List<Marcacao>();
-
-                marcacoes.Add(new Marcacao()
-                {
-                    DataMarcacao = DateTime.Now,
-                    Disponivel = true,
-                    Horario = DateTime.Now.TimeOfDay,
-                    HospitalId = Id,
-                    PacienteId = Guid.NewGuid(),
-                    Id = Guid.NewGuid()
-
-                });
-
-                return Ok(new Hospital()
-                {
-                    Id = Guid.NewGuid(),
-                    Contato = "813291124",
-                    Email = "hospital@gmail.com",
-                    Endereco = "Avenida Mascarenhas",
-                    Nome = "HR",
-                    Marcacoes = marcacoes
-                });
+                return Ok(hospitalRepositorio.Buscar(new Guid(id)));
             }
             catch (Exception)
             {
 
-                throw;
+                return BadRequest();
             }
         }
 
